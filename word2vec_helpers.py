@@ -32,7 +32,9 @@ def embedding_sentences(sentences, embedding_size = 128, window = 5, min_count =
     for sentence in sentences:
         this_vector = []
         for word in sentence:
+
             if word in w2vModel.wv.vocab:
+                # print(len(word))
                 this_vector.append(w2vModel[word])
             else:
                 this_vector.append(embeddingUnknown)
